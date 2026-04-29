@@ -1,10 +1,27 @@
-from src.process_violence_data import load_raw_json, json_to_df
+import os
+
+from src.process_violence_data import process_violence_file
+from src.config import RAW_DIR, PROCESSED_DIR
+
 
 def main():
-    raw_jss01 = load_raw_json("jss01_raw.json")
+    input_dir = RAW_DIR / "violence"
+    out_dir = PROCESSED_DIR / "violence"
 
-    df_jss01 = json_to_df(raw_jss01)
-    print(df_jss01.to_string())
+    for filename in os.listdir(input_dir):
+        if not filename.endswith(".json"):
+            continue
+
+        input_path = input_dir / filename
+
+        out_filename = filename.replace("_raw.json", "_clean.csv")
+        out_path = out_dir / out_filename
+
+        process_violence_file(input_path, out_path)
+
+        print(f"saved {out_filename}")
+
+    print("complete")
 
 if __name__ == "__main__":
     main()

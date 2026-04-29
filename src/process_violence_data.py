@@ -1,7 +1,7 @@
 import json
 
 import pandas as pd
-from config import RAW_DIR
+from src.config import RAW_DIR
 
 def load_raw_json(filename):
     path = RAW_DIR / filename
@@ -46,4 +46,21 @@ def json_to_df(json_file):
     df = pd.DataFrame(rows)
 
     return df
+
+def add_probability_columns(df):
+    df = df.copy()
+
+    df["probability"] = df["percent"] / 100
+    df["one_in"] = (1 / df["probability"]).round(2)
+
+    return df
+
+def process_violence_file(in_path, out_path):
+    raw_data = load_raw_json(in_path)
+
+    df = json_to_df(raw_data)
+    df = df.dropna(subset=["percent"])
+    df = add_probability_columns(df)
+
+    df.to_csv(out_path, index=False)
 
