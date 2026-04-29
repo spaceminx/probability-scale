@@ -8,11 +8,23 @@ PROCESSED_DIR = DATA_DIR / "processed"
 
 BASE_URL = "https://andmed.stat.ee/api/v1/et/stat/"
 
-DATASET_URLS = {
-  "JSS01": f"{BASE_URL}JSS01",
-  "JSS02": f"{BASE_URL}JSS02",
-  "JSS21": f"{BASE_URL}JSS21",
-  "JSS22": f"{BASE_URL}JSS22",
+DATASETS = {
+  "JSS01": {
+    "url": f"{BASE_URL}JSS01",
+    "category": "violence",
+  },
+  "JSS02": {
+    "url": f"{BASE_URL}JSS02",
+    "category": "violence",
+  },
+  "JSS21": {
+    "url": f"{BASE_URL}JSS21",
+    "category": "violence",
+  },
+  "JSS22": {
+    "url": f"{BASE_URL}JSS22",
+    "category": "violence",
+  },
 }
 
 JSON_REQUEST = {
