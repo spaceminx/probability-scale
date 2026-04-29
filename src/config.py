@@ -25,6 +25,10 @@ DATASETS = {
     "url": f"{BASE_URL}JSS22",
     "category": "violence",
   },
+  "TS093": {
+    "url": f"{BASE_URL}TS093",
+    "category": "traffic"
+  },
 }
 
 JSON_REQUEST = {
