@@ -5,6 +5,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "data"
 RAW_DIR = DATA_DIR / "raw"
 PROCESSED_DIR = DATA_DIR / "processed"
+RESULTS_DIR = BASE_DIR / "results"
 
 BASE_URL = "https://andmed.stat.ee/api/v1/et/stat/"
 CRIME_BASE_URL = "https://www.kriminaalpoliitika.ee/kuritegevus2021/"
