@@ -79,13 +79,53 @@ def build_traffic_events():
 
     return traffic
 
+def load_crime_data():
+    path = PROCESSED_DIR / "crime" / "crime_overview_2021_clean.csv"
+    return pd.read_csv(path)
+
+def build_crime_events():
+    df = load_crime_data()
+
+    theft = df[
+        df["crime_type"] == "§ 199  Vargus"
+    ].copy()
+
+    crime_against_person = df[
+        df["crime_type"] == "Isikuvastased kuriteod"
+    ].copy()
+
+    theft["event"] = "Experienced theft"
+    crime_against_person["event"] = "Experienced crime against person"
+
+    theft["category"] = "crime"
+    crime_against_person["category"] = "crime"
+
+    theft["source"] = "CRIME_OVERVIEW_2021"
+    crime_against_person["source"] = "CRIME_OVERVIEW_2021"
+
+    combined = pd.concat(
+        [theft, crime_against_person],
+        ignore_index=True
+    )
+
+    return combined[[
+        "event",
+        "category",
+        "probability",
+        "one_in",
+        "year",
+        "source",
+    ]]
+
+
 def main():
     df_violence = build_violent_events()
     df_traffic = build_traffic_events()
-
+    df_crime = build_crime_events()
     df = pd.concat([
         df_violence,
         df_traffic,
+        df_crime,
     ], ignore_index=True)
 
     print(df.to_string())
