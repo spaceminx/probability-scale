@@ -1,6 +1,6 @@
 import os
 
-from src.process_violence_data import process_violence_file
+from src.processing.process_violence_data import process_violence_file
 from src.config import RAW_DIR, PROCESSED_DIR
 
 

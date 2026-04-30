@@ -1,7 +1,7 @@
 import os
 
 from src.config import RAW_DIR, PROCESSED_DIR
-from src.process_traffic_data import process_traffic_file
+from src.processing.process_traffic_data import process_traffic_file
 
 
 def main():

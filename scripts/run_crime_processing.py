@@ -1,7 +1,7 @@
 import os
 
 from src.config import RAW_DIR, PROCESSED_DIR
-from src.process_crime_data import process_crime_data
+from src.processing.process_crime_data import process_crime_data
 
 
 def main():
