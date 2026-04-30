@@ -31,11 +31,21 @@ def add_probability_columns(df):
 
     return df
 
+def get_latest_year(df):
+    df = df.copy()
+
+    df["year"] = pd.to_numeric(df["year"], errors="coerce")
+
+    latest_year = df["year"].max()
+
+    return df[df["year"] == latest_year].copy()
+
 def process_violence_file(in_path, out_path):
     raw_data = load_violence_json(in_path)
 
     df = json_to_df(raw_data)
     df = clean_violence_df(df)
+    df = get_latest_year(df)
     df = add_probability_columns(df)
 
     df.to_csv(out_path, index=False)
