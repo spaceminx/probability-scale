@@ -1,12 +1,10 @@
 import json
 
 import pandas as pd
-from src.config import RAW_DIR
 from src.json_to_df import json_to_df
 
 
 def load_violence_json(file_path):
-    #path = RAW_DIR / "violence" / filename
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)
 

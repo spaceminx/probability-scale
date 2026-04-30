@@ -1,10 +1,8 @@
 import json
 
-from src.config import RAW_DIR
 from src.json_to_df import json_to_df
 
 def load_traffic_json(file_path):
-    #path = RAW_DIR / "traffic" /  filename
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
