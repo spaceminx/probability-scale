@@ -20,19 +20,19 @@ def build_violent_events():
 
     women = df_women[
         (df_women["indicator"] == women_indicator_name) &
-        (df_women["group"] == "Kokku")
+        (df_women["group"] == "Koges viimase 12 kuu jooksul")
     ].copy()
 
-    women["event"] = "Experienced intimate partner violence (women, lifetime)"
+    women["event"] = "Experienced intimate partner violence (women, last 12 months)"
     women["category"] = "violence"
     women["source"] = "JSS01"
 
     men = df_men[
         (df_men["indicator"] == men_indicator_name) &
-        (df_men["group"] == "Kokku")
+        (df_men["group"] == "Koges viimase 12 kuu jooksul")
         ].copy()
 
-    men["event"] = "Experienced intimate partner violence (men, lifetime)"
+    men["event"] = "Experienced intimate partner violence (men, last 12 months)"
     men["category"] = "violence"
     men["source"] = "JSS21"
 
