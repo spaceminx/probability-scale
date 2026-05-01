@@ -1,6 +1,6 @@
 event,category,probability,one_in,year,source
-"Experienced intimate partner violence (women, lifetime)",violence,0.412,2.43,2022,JSS01
-"Experienced intimate partner violence (men, lifetime)",violence,0.326,3.07,2022,JSS21
+"Experienced intimate partner violence (women, last 12 months)",violence,0.061,16.39,2022,JSS01
+"Experienced intimate partner violence (men, last 12 months)",violence,0.058,17.24,2022,JSS21
 Death among injured participants in traffic accidents,traffic,0.031,32.25,2024,TS093
 Experienced theft,crime,0.0056,178.57,2021,CRIME_OVERVIEW_2021
 Experienced crime against person,crime,0.0053,188.68,2021,CRIME_OVERVIEW_2021
