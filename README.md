@@ -26,6 +26,9 @@ intimate partner violence.
 This shows that while overall risk levels are low,
 it is concerning that intimate partner violence appears at the highest end of the scale.
 
+The probability of experiencing intimate partner violence is approximately
+10 times higher than that of being a victim of theft, based on the selected datasets.
+
 ---
 
 ## Visualization
