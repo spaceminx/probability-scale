@@ -148,3 +148,9 @@ python scripts/run_build_scale.py
 ```bash
 python scripts/run_make_plot.py
 ```
+
+---
+
+## License
+
+MIT License
